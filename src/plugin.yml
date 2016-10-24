@@ -1,0 +1,42 @@
+name: DisableWither
+main: net.bedrocknetworkmc.DisableWither.Main
+author: BryanGamer
+description: A plugin to disable wither spawning on certain worlds.
+version: 1.0.0
+commands:
+  disablewither:
+    description: Config the plugin DisableWither.
+    aliases: [dw, disablew, witherdisable, wdisable]
+permissions:
+  disablewither.reload:
+    description: Reloads configuration file.
+    default: op
+  disablewither.toggle:
+    description: Toggles if wither spawning will be disabled or not
+    default: op
+  disablewither.setmessage:
+    description: Set the message to send when a player tries to spawn a wither on a disabled world.
+    default: op
+  disablewither.setradius:
+    description: Set the radius in blocks to send the message when a player tries to spawn a wither on a disabled world.
+    default: op
+  disablewither.listworlds:
+    description: Displays a list of worlds where the wither spawning is disabled.
+    default: op
+  disablewither.addworld:
+    description: Add a world to the list of worlds where the wither spawning is disabled.
+    default: op
+  disablewither.removeworld:
+    description: Remove a world from the list of worlds where the wither spawning is disabled.
+    default: op
+  disablewither.admin:
+    description: Gives the player full permission to config the plugin.
+    default: false
+    children:
+      disablewither.reload: true
+      disablewither.toggle: true
+      disablewither.setmessage: true
+      disablewither.setradius: true
+      disablewither.listworlds: true
+      disablewither.addworld: true
+      disablewither.removeworld: true
