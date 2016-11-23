@@ -18,8 +18,8 @@ public class Main extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        registerCommands();
         registerConfig();
+        registerCommands();
         registerEvents();
         instance = this;
     }
@@ -46,6 +46,5 @@ public class Main extends JavaPlugin {
         config.options().copyDefaults(true);
         saveConfig();
         fileConfig = new File(getDataFolder(), "config.yml");
-
     }
 }

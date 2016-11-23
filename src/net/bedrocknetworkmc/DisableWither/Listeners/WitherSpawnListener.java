@@ -21,11 +21,7 @@ public class WitherSpawnListener implements Listener {
 
     @EventHandler
     public void onWitherSpawn(CreatureSpawnEvent event) {
-        if (event.getEntityType() == EntityType.WITHER) {
-
-            if (!plugin.config.getBoolean("enable")) {
-                return;
-            }
+        if (event.getEntityType() == EntityType.WITHER && plugin.getConfig().getBoolean("enable")) {
 
             List<String> configworlds = plugin.config.getStringList("worlds");
             prefix = ChatColor.translateAlternateColorCodes('&',plugin.getConfig().getString("message"));

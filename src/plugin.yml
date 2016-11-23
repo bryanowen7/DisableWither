@@ -2,7 +2,7 @@ name: DisableWither
 main: net.bedrocknetworkmc.DisableWither.Main
 author: BryanGamer
 description: A plugin to disable wither spawning on certain worlds.
-version: 1.0.0
+version: 1.0.1
 commands:
   disablewither:
     description: Config the plugin DisableWither.
@@ -12,7 +12,7 @@ permissions:
     description: Reloads configuration file.
     default: op
   disablewither.toggle:
-    description: Toggles if wither spawning will be disabled or not
+    description: Toggles if wither spawning will be disabled or not.
     default: op
   disablewither.setmessage:
     description: Set the message to send when a player tries to spawn a wither on a disabled world.

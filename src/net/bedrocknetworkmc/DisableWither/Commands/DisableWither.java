@@ -1,6 +1,7 @@
 package net.bedrocknetworkmc.DisableWither.Commands;
 
 import net.bedrocknetworkmc.DisableWither.Main;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -50,8 +51,10 @@ public class DisableWither implements CommandExecutor {
 
         if (args[0].equalsIgnoreCase("reload")) {
             if (sender.hasPermission("disablewither.reload")) {
-                plugin.config = YamlConfiguration.loadConfiguration(plugin.fileConfig);
+                Bukkit.getPluginManager().getPlugin("DisableWither").reloadConfig();
                 sender.sendMessage(prefix + ChatColor.GREEN + "Configuration file reloaded.");
+            } else {
+                sender.sendMessage(prefix + ChatColor.RED + "You don't have permission to do that.");
             }
         } else if (args[0].equalsIgnoreCase("toggle")) {
             if (sender.hasPermission("disablewither.toggle")) {
@@ -60,13 +63,9 @@ public class DisableWither implements CommandExecutor {
                     sender.sendMessage(prefix + ChatColor.GREEN + "DisableWither plugin successfully disabled.");
                     plugin.config.set("enable", false);
                     plugin.saveConfig();
-                } else if (status == false) {
+                } else {
                     sender.sendMessage(prefix + ChatColor.GREEN + "DisableWither plugin successfully enabled.");
                     plugin.config.set("enable", true);
-                    plugin.saveConfig();
-                } else {
-                    sender.sendMessage(prefix + ChatColor.GREEN + "DisableWither plugin successfully disabled.");
-                    plugin.config.set("enable", false);
                     plugin.saveConfig();
                 }
             }

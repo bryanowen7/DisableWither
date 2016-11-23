@@ -18,7 +18,7 @@ worlds:
 - world_3
 
 #Message to send when a player tries to spawn a wither on a disabled world.
-message: &cWithers are disabled on this world!
+message: '&cWithers are disabled on this world!'
 
 #Radius to send the message when a player tries to spawn a wither on a disabled world.
 #Set to 0 to disable the message and set -1 to send to all players online.
